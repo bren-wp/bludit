@@ -35,6 +35,11 @@ function updateBludit() {
 			$site->set(array('imageRelativeToAbsolute'=>true, 'imageRestrict'=>false));
 		}
 
+		// Generate a per-installation preview key if missing
+		if (empty($site->getField('previewKey'))) {
+			$site->set(array('previewKey'=>Text::generateToken()));
+		}
+
 		// Set the current build number
 		$site->set(array('currentBuild'=>BLUDIT_BUILD));
 		Log::set('UPDATE SYSTEM - Finished.');

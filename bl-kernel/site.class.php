@@ -48,6 +48,7 @@ class Site extends dbJSON
 		'titleFormatTag' => 	'{{tag-name}} | {{site-title}}',
 		'imageRestrict' =>	true,
 		'imageRelativeToAbsolute' => false,
+		'previewKey' =>		'',
 		'thumbnailEnable' =>	true,
 		'thumbnailWidth' => 	400, // px
 		'thumbnailHeight' => 	400, // px
@@ -161,6 +162,11 @@ class Site extends dbJSON
 	public function markdownParser()
 	{
 		return $this->getField('markdownParser');
+	}
+
+	public function previewKey()
+	{
+		return $this->getField('previewKey');
 	}
 
 	public function twitter()
